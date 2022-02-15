@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Proyecto Final</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+  </head>
+  <body>
+    <nav
+      class="relative w-full flex flex-wrap items-center justify-between py-3 bg-gray-100 text-gray-500 hover:text-gray-700 focus:text-gray-700 shadow-lg"
+    >
+      <div
+        class="container-fluid w-full flex flex-wrap items-center justify-between px-6"
+      >
+        <div class="container-fluid">
+          <a class="text-xl text-black font-semibold" href="#"
+            >Cotizador de Bitcoin</a
+          >
+        </div>
+      </div>
+    </nav>
+    <div class="container mx-auto px-4 bg-slate-200 pt-5 my-3">
+      <div class="flex flex-wrap justify-center">
+        <div class="basis-1/3 px-3">
+          <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+            <div class="mb-4">
+              <h1 class="text-center text-2xl font-bold">Cotizar</h1>
+              <p class="text-center text-gray-700 text-base">
+                Ingrese la cantidad de pesos que desea convertir a Bitcoin
+              </p>
+            </div>
+            <form id="form">
+              <div class="mb-4">
+                <div class="mb-4">
+                  <label
+                    class="block text-gray-700 text-sm font-bold mb-2"
+                    for="pesos"
+                  >
+                    Ingresa la cantidad de pesos que deseas convertir:
+                  </label>
+                  <input
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    id="pesos"
+                    name="pesos"
+                    type="number"
+                    placeholder="$ 1000"
+                  />
+                </div>
+                <div class="flex justify-center">
+                  <button
+                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                    type="submit"
+                  >
+                    Cotizar
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="basis-1/3 px-3">
+          <div id="errors"></div>
+          <div class="flex items-center justify-center" id="spinner">
+            <div
+              class="w-16 h-16 border-b-2 border-gray-900 rounded-full animate-spin"
+            ></div>
+          </div>
+          <div class="flex flex-col invisible" id="cotizationTable">
+            <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+              <div
+                class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8"
+              >
+                <div
+                  class="shadow overflow-x-auto border-b border-gray-200 sm:rounded-lg"
+                >
+                  <table class="min-w-full divide-y divide-gray-200">
+                    <thead class="bg-gray-50">
+                      <tr>
+                        <th
+                          scope="col"
+                          class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider"
+                        >
+                          Pesos
+                        </th>
+                        <th
+                          scope="col"
+                          class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider"
+                        >
+                          Bitcoin
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody
+                      class="bg-white divide-y divide-gray-200"
+                      id="table"
+                    ></tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="basis-1/3 px-3">
+          <div class="flex flex-col" id="coti">
+            <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+              <div
+                class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8 "
+              >
+                <div
+                  class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg bg-gray-50"
+                >
+                  <div
+                    id="cotizaciones"
+                    class="min-w-full divide-y divide-gray-200 bg-gray-50"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="text-center lg:text-left bg-gray-100 text-gray-600">
+      <div
+        class="flex justify-center items-center lg:justify-between p-6 border-b border-gray-300"
+      >
+        <div class="mr-12 hidden lg:block">
+          <span>Obtené la ultima cotización del Bitcoin</span>
+        </div>
+      </div>
+      <div class="text-center p-6 bg-gray-200">
+        <span
+          >©
+          <script>
+            document.write(/\d{4}/.exec(Date())[0]);
+          </script>
+          Copyright:</span
+        >
+        <a
+          class="text-gray-600 font-semibold"
+          href="https://tailwind-elements.com/"
+          >Cotizador de Bitcoin</a
+        >
+      </div>
+    </footer>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
